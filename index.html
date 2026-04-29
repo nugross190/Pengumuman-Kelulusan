@@ -1,0 +1,1242 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pengumuman Kelulusan — SMAN 5 Garut</title>
+<meta name="description" content="Pengumuman Kelulusan Tahun Pelajaran 2025/2026 — SMA Negeri 5 Garut">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── Palette: HADIR foundation + ceremonial red/yellow accents ── */
+  :root {
+    --bg:           #FDF8F0;   /* HADIR warm cream, slightly warmer */
+    --bg-card:      #FFFFFF;
+    --bg-soft:      #F6EFE0;
+    --bg-active:    #FEF3E7;
+    --text:         #1C1410;   /* HADIR ink */
+    --text-2:       #5C4E42;
+    --text-3:       #9C8A78;
+    --border:       #E8DDD0;
+    --border-strong:#C8B89C;
+
+    --accent:       #C41E1E;   /* SMAN 5 red */
+    --accent-dark:  #8B1515;
+    --accent-soft:  #FBE5E5;
+    --gold:         #D4A80F;
+    --gold-soft:    #FBF1C7;
+    --gold-deep:    #8A6A0A;
+
+    --pass:         #2D6A3D;
+    --pass-soft:    #E2F0E5;
+    --hold:         #8A4A14;
+    --hold-soft:    #F8E8D4;
+
+    --radius:       14px;
+    --radius-sm:    8px;
+    --shadow:       0 1px 3px rgba(28,20,16,0.06), 0 1px 2px rgba(28,20,16,0.04);
+    --shadow-lg:    0 8px 24px -8px rgba(28,20,16,0.18), 0 2px 6px -2px rgba(28,20,16,0.06);
+
+    --font:         'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100dvh;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+    background-image:
+      radial-gradient(ellipse at top right, rgba(196,30,30,0.05), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(212,168,15,0.06), transparent 55%);
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 20px 80px;
+    position: relative;
+    z-index: 1;
+  }
+  .wrap.admin-wrap { max-width: 1100px; }
+
+  /* ── LETTERHEAD ── */
+  .kop {
+    display: grid;
+    grid-template-columns: 72px 1fr 72px;
+    gap: 16px;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--text);
+    position: relative;
+  }
+  .kop::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -6px;
+    height: 1px; background: var(--text);
+  }
+  .kop img { width: 100%; height: auto; display: block; }
+  .kop-text { text-align: center; }
+  .kop-text .pem {
+    font-family: var(--font);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--text-2); margin: 0 0 2px;
+  }
+  .kop-text .dinas {
+    font-family: var(--font); font-size: 15px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text); margin: 0 0 4px;
+  }
+  .kop-text .sman {
+    font-family: var(--font-display); font-size: 26px; font-weight: 900;
+    letter-spacing: 0.02em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 4px; line-height: 1.05;
+  }
+  .kop-text .alamat {
+    font-size: 12px; color: var(--text-2);
+    font-style: italic; margin: 0; line-height: 1.3;
+  }
+
+  /* ── TITLE BLOCK ── */
+  .title-block { text-align: center; margin: 28px 0 32px; }
+  .title-block .label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.28em;
+    color: var(--accent); text-transform: uppercase;
+    margin-bottom: 10px;
+    background: var(--accent-soft);
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .title-block h1 {
+    font-family: var(--font-display);
+    font-weight: 900; font-size: clamp(28px, 5vw, 40px);
+    margin: 0 0 4px; letter-spacing: 0.01em; line-height: 1.1;
+    color: var(--text);
+  }
+  .title-block h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
+  .title-block .year {
+    font-family: var(--font-display); font-style: italic;
+    font-size: 18px; color: var(--text-2); margin-top: 6px;
+  }
+  .ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; margin: 16px 0 0; color: var(--gold);
+  }
+  .ornament .line { flex: 0 1 70px; height: 1px; background: currentColor; opacity: 0.6; }
+  .ornament .dot { width: 6px; height: 6px; background: currentColor; transform: rotate(45deg); }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 32px 36px;
+    position: relative;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 60%, var(--gold) 60%, var(--gold) 100%);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  .intro { font-size: 16px; line-height: 1.6; margin: 0 0 22px; color: var(--text-2); }
+  .intro strong { color: var(--text); font-weight: 600; }
+
+  form { margin: 0; }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: var(--font);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-2); margin-bottom: 6px;
+  }
+  .field input {
+    width: 100%; background: var(--bg-soft);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 11px 14px;
+    font-family: var(--font);
+    font-size: 16px; color: var(--text); outline: none;
+    transition: all 0.18s ease;
+  }
+  .field input:focus {
+    border-color: var(--accent);
+    background: var(--bg-card);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .field .hint { font-size: 13px; color: var(--text-3); font-style: italic; margin-top: 6px; }
+
+  .actions { display: flex; align-items: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+  button.primary {
+    font-family: var(--font);
+    font-weight: 600; font-size: 14px;
+    letter-spacing: 0.04em;
+    background: var(--accent); color: white;
+    border: none; padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.18s ease;
+    box-shadow: 0 2px 6px -2px rgba(196,30,30,0.4);
+  }
+  button.primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px -4px rgba(196,30,30,0.5);
+  }
+  button.primary:active { transform: translateY(0); }
+  button.primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .err {
+    color: var(--accent); font-size: 14px;
+    min-height: 22px;
+    background: var(--accent-soft);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    display: none;
+  }
+  .err.show { display: block; }
+
+  /* ── VIEWS ── */
+  .login-view.hide, .result.hide, .admin-view.hide { display: none !important; }
+  .result, .admin-view { display: none; }
+  .result.show, .admin-view.show { display: block; }
+
+  /* ── STUDENT RESULT ── */
+  .letter-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    font-size: 13px; color: var(--text-2); margin-bottom: 18px;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .nomor { font-family: var(--font-mono); font-weight: 500; }
+  .tanggal { font-style: italic; }
+
+  .salam {
+    font-family: var(--font-display); font-style: italic;
+    font-size: 18px; margin: 22px 0 14px; color: var(--text);
+  }
+  .body-text { font-size: 16px; line-height: 1.65; margin: 0 0 16px; color: var(--text-2); }
+  .body-text strong { color: var(--text); font-weight: 600; }
+
+  .siswa-info {
+    margin: 20px 0 26px;
+    background: var(--bg-soft);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    border-left: 3px solid var(--accent);
+  }
+  .siswa-info dl {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 6px 16px;
+    margin: 0;
+    font-size: 15px;
+  }
+  .siswa-info dt { color: var(--text-3); font-style: italic; }
+  .siswa-info dd { margin: 0; color: var(--text); font-weight: 600; letter-spacing: 0.01em; }
+
+  /* ── STAMP ── */
+  .stamp-wrap { margin: 32px 0; text-align: center; position: relative; }
+  .stamp {
+    display: inline-block;
+    padding: 22px 56px;
+    border: 4px double currentColor;
+    font-family: var(--font-display);
+    font-size: 36px; font-weight: 900;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    transform: rotate(-3deg);
+    position: relative;
+    background: rgba(255,255,255,0.4);
+    border-radius: 6px;
+  }
+  .stamp.lulus { color: var(--pass); }
+  .stamp.lulus::before {
+    content: '★'; position: absolute; top: -12px; left: 50%;
+    transform: translateX(-50%) rotate(3deg);
+    font-size: 22px; background: var(--bg); padding: 0 10px;
+  }
+  .stamp.hold { color: var(--hold); transform: rotate(-2deg); }
+  .stamp.hold::before {
+    content: '※'; position: absolute; top: -12px; left: 50%;
+    transform: translateX(-50%) rotate(2deg);
+    font-size: 22px; background: var(--bg); padding: 0 10px;
+  }
+  .stamp-tagline { margin-top: 14px; font-style: italic; font-size: 15px; color: var(--text-2); }
+
+  .rerata-statement {
+    margin: 24px 0 8px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, var(--gold-soft), var(--bg-card));
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    text-align: center;
+    font-size: 17px; line-height: 1.6;
+    color: var(--text);
+  }
+  .rerata-statement strong { color: var(--accent); font-weight: 700; }
+  .rerata-statement .nilai {
+    font-family: var(--font-display);
+    font-weight: 900; font-size: 22px;
+    color: var(--accent-dark);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── GRADES ── */
+  .grades-section { margin: 28px 0 22px; }
+  .grades-section h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px; letter-spacing: 0.01em;
+    margin: 0 0 12px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-strong);
+    display: flex; justify-content: space-between; align-items: baseline;
+    color: var(--text);
+  }
+  .grades-section h3 .meta {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--gold-deep); font-weight: 500; letter-spacing: 0.06em;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  table th {
+    text-align: left; font-family: var(--font);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-3);
+    padding: 8px 10px; border-bottom: 1px solid var(--border);
+  }
+  table th.num { text-align: right; }
+  table td { padding: 10px; border-bottom: 1px solid var(--border); }
+  table td.subj { color: var(--text); }
+  table td.score {
+    text-align: right; font-family: var(--font-mono);
+    font-weight: 600; color: var(--text); letter-spacing: 0.02em;
+  }
+  table td.score.fail { color: var(--accent); }
+
+  .closing { margin-top: 22px; font-size: 15px; line-height: 1.65; color: var(--text-2); }
+  .closing strong { color: var(--text); font-weight: 600; }
+  .signature { display: flex; justify-content: flex-end; margin-top: 32px; }
+  .sig-block { text-align: center; font-size: 14px; }
+  .sig-block .pos { font-style: italic; color: var(--text-2); margin-bottom: 56px; }
+  .sig-block .name {
+    font-family: var(--font-display); font-weight: 700;
+    color: var(--text); border-top: 1px solid var(--text-2);
+    padding-top: 4px; min-width: 200px;
+  }
+  .sig-block .nip { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+  .back-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 28px;
+    background: transparent; color: var(--text-2);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 9px 18px; font-size: 13px;
+    font-family: var(--font); cursor: pointer;
+    transition: all 0.18s;
+  }
+  .back-btn:hover { background: var(--text); color: white; border-color: var(--text); }
+
+  /* ── ADMIN PANEL ── */
+  .admin-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 14px; line-height: 1.5;
+    color: var(--text-2);
+    box-shadow: var(--shadow);
+  }
+  .admin-banner .icon {
+    font-family: var(--font-display);
+    font-size: 24px; line-height: 1;
+    color: var(--accent); flex-shrink: 0; font-weight: 900;
+  }
+  .admin-banner strong { color: var(--text); font-weight: 600; }
+
+  .admin-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+  }
+  .admin-toolbar input[type="text"] {
+    flex: 1 1 220px; min-width: 0;
+    background: var(--bg-soft);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 9px 12px;
+    font-family: var(--font);
+    font-size: 14px; color: var(--text); outline: none;
+    transition: all 0.18s;
+  }
+  .admin-toolbar input[type="text"]:focus {
+    border-color: var(--accent);
+    background: white;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .admin-toolbar select {
+    background: var(--bg-soft);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 9px 12px;
+    font-family: var(--font);
+    font-size: 14px; color: var(--text);
+    outline: none; cursor: pointer;
+    transition: all 0.18s;
+  }
+  .admin-toolbar select:focus { border-color: var(--accent); background: white; }
+  .admin-toolbar .count {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.1em;
+    color: var(--text-3); text-transform: uppercase;
+    margin-left: auto; white-space: nowrap;
+  }
+  .btn-secondary {
+    font-family: var(--font);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.04em;
+    background: var(--bg-soft);
+    color: var(--text-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 8px 14px; cursor: pointer;
+    transition: all 0.18s;
+  }
+  .btn-secondary:hover { background: var(--text); color: white; border-color: var(--text); }
+
+  .admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .stat .lbl {
+    font-family: var(--font);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-3);
+  }
+  .stat .val {
+    font-family: var(--font-display);
+    font-size: 28px; font-weight: 900;
+    color: var(--text); line-height: 1.1; margin-top: 4px;
+  }
+  .stat.pass .val { color: var(--pass); }
+  .stat.hold .val { color: var(--hold); }
+  .stat.modified .val { color: var(--accent); }
+
+  .student-table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow-x: auto;
+    box-shadow: var(--shadow);
+  }
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 760px;
+  }
+  .student-table thead th {
+    background: var(--text);
+    color: var(--bg);
+    font-family: var(--font);
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 12px 14px; text-align: left;
+    position: sticky; top: 0; z-index: 1;
+  }
+  .student-table thead th.num { text-align: right; }
+  .student-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.12s;
+  }
+  .student-table tbody tr:hover { background: var(--bg-soft); }
+  .student-table tbody tr.modified { background: var(--gold-soft); }
+  .student-table tbody tr.modified:hover { background: #f8e8a0; }
+  .student-table td { padding: 10px 14px; vertical-align: middle; }
+  .student-table td.idx {
+    font-family: var(--font-mono);
+    font-size: 12px; color: var(--text-3); width: 36px;
+  }
+  .student-table td.nama { font-weight: 600; color: var(--text); }
+  .student-table td.nisn {
+    font-family: var(--font-mono);
+    font-size: 13px; color: var(--text-2);
+  }
+  .student-table td.jurusan {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.06em;
+    color: var(--text-3);
+  }
+  .student-table td.avg {
+    text-align: right; font-family: var(--font-mono);
+    font-weight: 600; color: var(--text);
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-family: var(--font);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 100px;
+  }
+  .badge.lulus { background: var(--pass-soft); color: var(--pass); }
+  .badge.hold { background: var(--hold-soft); color: var(--hold); }
+  .badge.modified-mark {
+    margin-left: 6px;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    padding: 3px 8px;
+    letter-spacing: 0.04em;
+  }
+  .toggle-btn {
+    font-family: var(--font);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.04em;
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+  .toggle-btn:hover { background: var(--accent); color: white; }
+  .toggle-btn:disabled { opacity: 0.5; cursor: wait; }
+  .empty-row td {
+    text-align: center; padding: 40px;
+    font-style: italic; color: var(--text-3);
+  }
+
+  .pagination {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 14px; margin-top: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border); border-top: none;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 12px; color: var(--text-2);
+  }
+  .pagination button {
+    font-family: var(--font); font-size: 12px;
+    background: transparent; color: var(--text-2);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  .pagination button:disabled { opacity: 0.3; cursor: not-allowed; }
+  .pagination button:not(:disabled):hover { background: var(--text); color: white; border-color: var(--text); }
+
+  /* ── MODAL ── */
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(28,20,16,0.5);
+    display: none;
+    align-items: center; justify-content: center;
+    z-index: 100;
+    padding: 20px;
+    backdrop-filter: blur(3px);
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 60px -20px rgba(0,0,0,0.4);
+    max-width: 460px; width: 100%;
+    padding: 28px 30px;
+    position: relative;
+    animation: fade-up 0.22s ease;
+  }
+  .modal h3 {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 22px;
+    margin: 0 0 12px; color: var(--text);
+  }
+  .modal p { font-size: 15px; line-height: 1.55; margin: 0 0 8px; color: var(--text-2); }
+  .modal .siswa-info { margin: 16px 0 18px; }
+  .modal .change-arrow {
+    text-align: center;
+    margin: 16px 0;
+    font-family: var(--font);
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--text-3);
+    text-transform: uppercase;
+  }
+  .modal .change-arrow .from { color: var(--text-2); }
+  .modal .change-arrow .arrow { font-size: 20px; color: var(--accent); margin: 0 8px; }
+  .modal .change-arrow .to { color: var(--accent); }
+  .modal-actions {
+    display: flex; gap: 10px; justify-content: flex-end;
+    margin-top: 22px;
+  }
+  .modal-actions .cancel {
+    background: transparent;
+    color: var(--text-2);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    padding: 9px 18px;
+    cursor: pointer;
+    font-family: var(--font);
+  }
+  .modal-actions .cancel:hover { background: var(--bg-soft); }
+  .modal-actions .confirm {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 13px; font-weight: 600;
+    padding: 9px 20px;
+    cursor: pointer;
+    font-family: var(--font);
+  }
+  .modal-actions .confirm:hover { background: var(--accent-dark); }
+  .modal-actions .confirm:disabled { opacity: 0.6; cursor: wait; }
+
+  /* ── LOADING ── */
+  .loading {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid var(--text-3);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .result.show > * { animation: fade-up 0.4s ease both; }
+  .result.show > *:nth-child(1) { animation-delay: 0.05s; }
+  .result.show > *:nth-child(2) { animation-delay: 0.1s; }
+  .result.show > *:nth-child(3) { animation-delay: 0.15s; }
+  .result.show > *:nth-child(4) { animation-delay: 0.2s; }
+  .result.show > *:nth-child(5) { animation-delay: 0.25s; }
+  .result.show > *:nth-child(6) { animation-delay: 0.3s; }
+  .result.show > *:nth-child(7) { animation-delay: 0.35s; }
+  .result.show > *:nth-child(8) { animation-delay: 0.4s; }
+
+  @keyframes seal-in {
+    0% { opacity: 0; transform: scale(2) rotate(-20deg); }
+    60% { opacity: 1; transform: scale(0.92) rotate(-5deg); }
+    100% { opacity: 1; transform: scale(1) rotate(-3deg); }
+  }
+  .stamp { animation: seal-in 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both; animation-delay: 0.3s; }
+  .stamp.hold { animation-delay: 0.3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .wrap.admin-wrap { padding: 16px 12px 60px; }
+    .admin-stats { grid-template-columns: repeat(2, 1fr); }
+    .admin-toolbar input[type="text"] { flex: 1 1 100%; }
+    .admin-toolbar .count { margin-left: 0; flex: 1 1 100%; text-align: right; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 16px 12px 60px; }
+    .kop { grid-template-columns: 50px 1fr 50px; gap: 10px; }
+    .kop-text .dinas { font-size: 12px; }
+    .kop-text .sman { font-size: 18px; }
+    .kop-text .pem { font-size: 10px; }
+    .kop-text .alamat { font-size: 11px; }
+    .card { padding: 22px 18px; }
+    .siswa-info dl { grid-template-columns: 1fr; gap: 0; }
+    .siswa-info dt { margin-top: 8px; }
+    .siswa-info dd { margin-bottom: 4px; font-size: 16px; }
+    .stamp { padding: 16px 28px; font-size: 26px; }
+    .rerata-statement { font-size: 16px; padding: 16px 18px; }
+    .rerata-statement .nilai { font-size: 20px; }
+    .signature { justify-content: center; }
+    .actions { flex-direction: column; align-items: stretch; }
+    button.primary { width: 100%; }
+  }
+  @media print {
+    body::before { display: none; }
+    .actions, .back-btn, .login-view, .admin-view { display: none !important; }
+    .card { border: none; box-shadow: none; padding: 0; }
+    .card::before { display: none; }
+    .wrap { padding: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="mainWrap">
+
+  <!-- LETTERHEAD -->
+  <header class="kop">
+    <img src="/static/logo-jabar.png" alt="Logo Jawa Barat">
+    <div class="kop-text">
+      <p class="pem">Pemerintah Daerah Provinsi Jawa Barat</p>
+      <p class="dinas">Dinas Pendidikan</p>
+      <p class="sman">SMA Negeri 5 Garut</p>
+      <p class="alamat">Jl. Raya Bayongbong KM. 09, Garut, Jawa Barat &middot; NPSN: 20227522</p>
+    </div>
+    <img src="/static/logo-sman5.png" alt="Logo SMAN 5 Garut">
+  </header>
+
+  <!-- LOGIN -->
+  <section class="login-view" id="loginView">
+    <div class="title-block">
+      <span class="label">Pengumuman Resmi</span>
+      <h1>Pengumuman <em>Kelulusan</em></h1>
+      <div class="year">Tahun Pelajaran 2025 / 2026</div>
+      <div class="ornament"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+    </div>
+    <div class="card">
+      <p class="intro">
+        Kepada peserta didik kelas <strong>XII</strong>, silakan masukkan <strong>NISN</strong> dan <strong>Nama Lengkap</strong> Anda untuk melihat hasil pengumuman kelulusan secara resmi.
+      </p>
+      <form id="loginForm" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="nisn">Nomor Induk Siswa Nasional (NISN)</label>
+          <input type="text" id="nisn" name="nisn" inputmode="numeric" pattern="[0-9]*" maxlength="12" required>
+          <div class="hint">10 digit angka, sesuai data dapodik Anda.</div>
+        </div>
+        <div class="field">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" required spellcheck="false">
+          <div class="hint">Sesuai ijazah / dokumen sekolah.</div>
+        </div>
+        <div class="actions">
+          <button type="submit" class="primary" id="loginBtn">Lihat Pengumuman</button>
+        </div>
+        <div class="err" id="err" role="alert" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- STUDENT RESULT -->
+  <section class="result" id="resultView" aria-live="polite">
+    <div class="letter-head">
+      <span class="nomor" id="nomorSurat">Nomor: 421/____/SMAN.5/2026</span>
+      <span class="tanggal" id="tanggalSurat"></span>
+    </div>
+    <div class="title-block" style="margin: 8px 0 22px;">
+      <span class="label">Surat Keterangan</span>
+      <h1 style="font-size: clamp(22px,4vw,30px);">Hasil <em>Kelulusan</em> Peserta Didik</h1>
+      <div class="ornament"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+    </div>
+    <p class="salam">Dengan hormat,</p>
+    <p class="body-text">
+      Berdasarkan hasil rapat pleno dewan guru SMA Negeri 5 Garut serta sesuai dengan ketentuan yang berlaku pada Tahun Pelajaran 2025/2026, dengan ini diberitahukan bahwa peserta didik dengan identitas sebagai berikut:
+    </p>
+    <div class="siswa-info">
+      <dl>
+        <dt>Nama</dt><dd id="rNama">—</dd>
+        <dt>NISN</dt><dd id="rNisn">—</dd>
+        <dt>NIS</dt><dd id="rNis">—</dd>
+        <dt>Program</dt><dd id="rJurusan">—</dd>
+      </dl>
+    </div>
+    <p class="body-text">dinyatakan dengan status:</p>
+    <div class="stamp-wrap">
+      <div class="stamp" id="rStamp">—</div>
+      <div class="stamp-tagline" id="rTagline"></div>
+    </div>
+    <div class="rerata-statement" id="rRerataStatement"></div>
+    <div class="grades-section">
+      <h3><span>Rincian Nilai Akhir</span> <span class="meta" id="rGradesMeta"></span></h3>
+      <table>
+        <thead><tr><th>Mata Pelajaran</th><th class="num">Nilai Akhir</th></tr></thead>
+        <tbody id="rGrades"></tbody>
+      </table>
+    </div>
+    <div class="closing" id="rClosing"></div>
+    <div class="signature">
+      <div class="sig-block">
+        <div class="pos">Garut, <span id="rTanggalTtd"></span><br>Kepala Sekolah,</div>
+        <div class="name">__________________________</div>
+        <div class="nip">NIP. ___________________</div>
+      </div>
+    </div>
+    <button class="back-btn" type="button" onclick="location.reload()">&larr; Kembali</button>
+  </section>
+
+  <!-- ADMIN PANEL -->
+  <section class="admin-view" id="adminView">
+    <div class="title-block" style="margin: 8px 0 20px;">
+      <span class="label">Panel Administrator</span>
+      <h1 style="font-size: clamp(22px,4vw,30px);">Daftar <em>Status Kelulusan</em> Peserta Didik</h1>
+    </div>
+
+    <div class="admin-banner">
+      <span class="icon">§</span>
+      <div>
+        <strong>Persisten via Postgres.</strong> Setiap perubahan status disimpan ke basis data dengan timestamp dan dapat dicabut sewaktu-waktu. Status hasil perhitungan dari spreadsheet menjadi <em>baseline</em>; perubahan admin mengganti status tersebut sampai dicabut.
+      </div>
+    </div>
+
+    <div class="admin-stats">
+      <div class="stat"><div class="lbl">Total Siswa</div><div class="val" id="sTotal">—</div></div>
+      <div class="stat pass"><div class="lbl">Lulus</div><div class="val" id="sLulus">—</div></div>
+      <div class="stat hold"><div class="lbl">Ditangguhkan</div><div class="val" id="sHold">—</div></div>
+      <div class="stat modified"><div class="lbl">Diubah</div><div class="val" id="sModified">—</div></div>
+    </div>
+
+    <div class="admin-toolbar">
+      <input type="text" id="adminSearch" placeholder="Cari nama atau NISN…" autocomplete="off">
+      <select id="adminFilterStatus">
+        <option value="all">Semua Status</option>
+        <option value="Lulus">Lulus saja</option>
+        <option value="Ditangguhkan">Ditangguhkan saja</option>
+        <option value="modified">Hanya yang diubah</option>
+      </select>
+      <select id="adminFilterJurusan">
+        <option value="all">Semua Program</option>
+        <option value="MIPA">MIPA</option>
+        <option value="IPS">IPS</option>
+      </select>
+      <button class="btn-secondary" id="resetBtn" type="button">Reset Semua</button>
+      <span class="count" id="rowCount">— baris</span>
+    </div>
+
+    <div class="student-table-wrap">
+      <table class="student-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nama</th>
+            <th>NISN</th>
+            <th>Program</th>
+            <th class="num">Rata-rata</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="adminTbody"></tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <button type="button" id="prevPage">&larr; Prev</button>
+      <span id="pageInfo">Halaman 1 / 1</span>
+      <button type="button" id="nextPage">Next &rarr;</button>
+    </div>
+
+    <button class="back-btn" type="button" onclick="location.reload()">&larr; Logout</button>
+  </section>
+
+</div>
+
+<!-- MODAL: confirm toggle -->
+<div class="modal-backdrop" id="confirmModal">
+  <div class="modal">
+    <h3>Konfirmasi Perubahan Status</h3>
+    <p>Anda akan mengubah status kelulusan untuk peserta didik berikut:</p>
+    <div class="siswa-info">
+      <dl>
+        <dt>Nama</dt><dd id="mNama">—</dd>
+        <dt>NISN</dt><dd id="mNisn">—</dd>
+      </dl>
+    </div>
+    <div class="change-arrow">
+      <span class="from" id="mFrom">—</span>
+      <span class="arrow">→</span>
+      <span class="to" id="mTo">—</span>
+    </div>
+    <p style="font-size:13px;color:var(--text-3);font-style:italic;">Perubahan akan disimpan ke basis data dan langsung berlaku.</p>
+    <div class="modal-actions">
+      <button class="cancel" type="button" id="mCancel">Batal</button>
+      <button class="confirm" type="button" id="mConfirm">Ubah Status</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── State ──
+const KKM = 75;
+const PAGE_SIZE = 25;
+const ORDER = [
+  'PAI','PKn','B. INDO','MATEMATIKA','SEJARAH INDONESIA','B.INGGRIS',
+  'SENI BUDAYA','PJOK','PRAKARYA','B.SUNDA',
+  'MATEMATIKA MINAT','BIOLOGI','FISIKA','KIMIA',
+  'SEJARAH MINAT','GEOGRAFI','SOSIOLOGI','EKONOMI'
+];
+const LABELS = {
+  'PAI': 'Pendidikan Agama Islam & Budi Pekerti',
+  'PKn': 'Pendidikan Pancasila & Kewarganegaraan',
+  'B. INDO': 'Bahasa Indonesia',
+  'MATEMATIKA': 'Matematika (Wajib)',
+  'SEJARAH INDONESIA': 'Sejarah Indonesia',
+  'B.INGGRIS': 'Bahasa Inggris',
+  'SENI BUDAYA': 'Seni Budaya',
+  'PJOK': 'Pendidikan Jasmani, Olahraga & Kesehatan',
+  'PRAKARYA': 'Prakarya & Kewirausahaan',
+  'B.SUNDA': 'Bahasa Sunda',
+  'MATEMATIKA MINAT': 'Matematika (Peminatan)',
+  'BIOLOGI': 'Biologi',
+  'FISIKA': 'Fisika',
+  'KIMIA': 'Kimia',
+  'SEJARAH MINAT': 'Sejarah (Peminatan)',
+  'GEOGRAFI': 'Geografi',
+  'SOSIOLOGI': 'Sosiologi',
+  'EKONOMI': 'Ekonomi'
+};
+
+// Admin session — credentials kept in memory after login to authenticate API calls
+let adminCreds = null;     // { nisn, nama }
+let adminPage = 1;
+let adminFiltered = [];
+let adminAll = [];
+
+function formatLongDate(d) {
+  const months = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function(c) {
+    return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+  });
+}
+function showError(msg) {
+  const el = document.getElementById('err');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+function clearError() {
+  const el = document.getElementById('err');
+  el.textContent = '';
+  el.classList.remove('show');
+}
+
+// ── LOGIN ──
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  clearError();
+  const nisn = document.getElementById('nisn').value.trim();
+  const nama = document.getElementById('nama').value.trim();
+  if (!nisn || !nama) { showError('Mohon lengkapi NISN dan Nama.'); return; }
+
+  const btn = document.getElementById('loginBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading"></span>Memuat...';
+
+  try {
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nisn: nisn, nama: nama })
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(function(){ return { detail: 'Terjadi kesalahan.' }; });
+      showError(err.detail || 'Gagal memuat data.');
+      return;
+    }
+    const body = await res.json();
+    if (body.role === 'admin') {
+      adminCreds = { nisn: nisn, nama: nama };
+      await showAdmin();
+    } else {
+      showResult(body.data);
+    }
+  } catch (e) {
+    showError('Tidak dapat terhubung ke server. Coba lagi.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Lihat Pengumuman';
+  }
+});
+
+document.getElementById('nama').addEventListener('blur', function(e) {
+  e.target.value = e.target.value.trim().replace(/\s+/g, ' ');
+});
+
+// ── STUDENT RESULT ──
+function showResult(rec) {
+  document.getElementById('loginView').classList.add('hide');
+  const view = document.getElementById('resultView');
+  view.classList.add('show');
+
+  const today = new Date();
+  document.getElementById('tanggalSurat').textContent = formatLongDate(today);
+  document.getElementById('rTanggalTtd').textContent = formatLongDate(today);
+  document.getElementById('rNama').textContent = rec.nama;
+  document.getElementById('rNisn').textContent = String(rec.nisn).padStart(10, '0');
+  document.getElementById('rNis').textContent = rec.nis || '—';
+  document.getElementById('rJurusan').textContent = rec.jurusan
+    ? (rec.jurusan === 'MIPA' ? 'MIPA (Matematika & Ilmu Pengetahuan Alam)' : 'IPS (Ilmu Pengetahuan Sosial)')
+    : '—';
+
+  const status = rec.effective_status;
+  const stamp = document.getElementById('rStamp');
+  const tagline = document.getElementById('rTagline');
+  const closing = document.getElementById('rClosing');
+  const rerataEl = document.getElementById('rRerataStatement');
+  const avg = (rec.average || 0).toFixed(2);
+
+  if (status === 'Lulus') {
+    stamp.textContent = 'L U L U S';
+    stamp.className = 'stamp lulus';
+    tagline.textContent = 'Selamat dan sukses atas kelulusan Anda.';
+    rerataEl.style.display = 'block';
+    rerataEl.innerHTML =
+      'Anda dinyatakan <strong>LULUS</strong> dengan rata-rata nilai akhir<br>' +
+      '<span class="nilai">' + avg + '</span>';
+    closing.innerHTML =
+      '<p class="body-text">Demikian pengumuman ini kami sampaikan. Kepada yang bersangkutan, kami ucapkan <em>selamat</em> dan semoga keberhasilan ini menjadi bekal yang baik untuk melanjutkan ke jenjang pendidikan berikutnya. Pengambilan ijazah dan dokumen kelulusan akan diinformasikan lebih lanjut melalui wali kelas masing-masing.</p>';
+  } else {
+    stamp.textContent = 'Ditangguhkan';
+    stamp.className = 'stamp hold';
+    tagline.textContent = 'Status memerlukan tindak lanjut dari sekolah.';
+    rerataEl.style.display = 'none';
+    let failedHtml = '';
+    if (rec.failed_subjects && rec.failed_subjects.length) {
+      const fLabels = rec.failed_subjects.map(function(x) { return LABELS[x] || x; });
+      failedHtml = ' Mata pelajaran yang belum memenuhi ketuntasan: <strong>' + fLabels.join(', ') + '</strong>.';
+    }
+    closing.innerHTML =
+      '<p class="body-text">Status kelulusan Anda saat ini ditangguhkan karena terdapat nilai akhir di bawah Kriteria Ketuntasan Minimal (KKM = ' + KKM + ').' + failedHtml +
+      ' Mohon segera menghubungi <strong>wali kelas</strong> atau bagian <strong>Kurikulum</strong> SMA Negeri 5 Garut untuk informasi tindak lanjut.</p>';
+  }
+
+  // Grades table
+  const tbody = document.getElementById('rGrades');
+  tbody.innerHTML = '';
+  let count = 0;
+  ORDER.forEach(function(key) {
+    if (rec.grades && rec.grades[key] !== undefined) {
+      const tr = document.createElement('tr');
+      const fail = rec.grades[key] < KKM;
+      tr.innerHTML = '<td class="subj">' + escapeHtml(LABELS[key] || key) + '</td>' +
+                     '<td class="score' + (fail ? ' fail' : '') + '">' + rec.grades[key].toFixed(2) + '</td>';
+      tbody.appendChild(tr);
+      count++;
+    }
+  });
+  document.getElementById('rGradesMeta').textContent = 'Rata-rata ' + avg + ' / ' + count + ' Mapel';
+
+  // Letter number
+  const seq = String(rec.nisn).padStart(10, '0').slice(-3);
+  document.getElementById('nomorSurat').textContent = 'Nomor: 421.3/' + seq + '/SMAN.5/2026';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── ADMIN PANEL ──
+async function showAdmin() {
+  document.getElementById('loginView').classList.add('hide');
+  document.getElementById('mainWrap').classList.add('admin-wrap');
+  document.getElementById('adminView').classList.add('show');
+  await loadAdminData();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+async function loadAdminData() {
+  if (!adminCreds) return;
+  try {
+    const res = await fetch('/api/admin/students', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(adminCreds)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(function(){ return { detail: 'Gagal memuat data.' }; });
+      alert('Gagal memuat data admin: ' + (err.detail || res.status));
+      return;
+    }
+    const body = await res.json();
+    adminAll = body.students;
+    document.getElementById('sTotal').textContent = body.total;
+    document.getElementById('sLulus').textContent = body.lulus;
+    document.getElementById('sHold').textContent = body.ditangguhkan;
+    document.getElementById('sModified').textContent = body.modified;
+    recomputeFilter();
+  } catch (e) {
+    alert('Tidak dapat terhubung ke server.');
+  }
+}
+
+function recomputeFilter() {
+  const search = document.getElementById('adminSearch').value.trim().toUpperCase();
+  const fStatus = document.getElementById('adminFilterStatus').value;
+  const fJurusan = document.getElementById('adminFilterJurusan').value;
+
+  adminFiltered = adminAll.filter(function(x) {
+    if (search) {
+      const blob = (x.nama + ' ' + x.nisn).toUpperCase();
+      if (blob.indexOf(search) === -1) return false;
+    }
+    if (fStatus === 'modified') {
+      if (!x.is_overridden) return false;
+    } else if (fStatus !== 'all') {
+      if (x.effective_status !== fStatus) return false;
+    }
+    if (fJurusan !== 'all' && x.jurusan !== fJurusan) return false;
+    return true;
+  });
+  adminFiltered.sort(function(a, b) { return a.nama.localeCompare(b.nama); });
+
+  document.getElementById('rowCount').textContent = adminFiltered.length + ' baris';
+  if (adminPage > Math.ceil(adminFiltered.length / PAGE_SIZE)) adminPage = 1;
+  if (adminPage < 1) adminPage = 1;
+  renderAdminPage();
+}
+
+function renderAdminPage() {
+  const tbody = document.getElementById('adminTbody');
+  tbody.innerHTML = '';
+  const totalPages = Math.max(1, Math.ceil(adminFiltered.length / PAGE_SIZE));
+  if (adminFiltered.length === 0) {
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="7">Tidak ada data yang sesuai filter.</td></tr>';
+  } else {
+    const start = (adminPage - 1) * PAGE_SIZE;
+    const end = Math.min(start + PAGE_SIZE, adminFiltered.length);
+    for (let i = start; i < end; i++) {
+      const x = adminFiltered[i];
+      const tr = document.createElement('tr');
+      if (x.is_overridden) tr.classList.add('modified');
+      const isLulus = x.effective_status === 'Lulus';
+      tr.innerHTML =
+        '<td class="idx">' + (i + 1) + '</td>' +
+        '<td class="nama">' + escapeHtml(x.nama) + (x.is_overridden ? ' <span class="badge modified-mark">Diubah</span>' : '') + '</td>' +
+        '<td class="nisn">' + escapeHtml(x.nisn) + '</td>' +
+        '<td class="jurusan">' + escapeHtml(x.jurusan || '—') + '</td>' +
+        '<td class="avg">' + (x.average ? x.average.toFixed(2) : '—') + '</td>' +
+        '<td><span class="badge ' + (isLulus ? 'lulus' : 'hold') + '">' + escapeHtml(x.effective_status) + '</span></td>' +
+        '<td><button class="toggle-btn" data-nisn="' + escapeHtml(x.nisn) + '">Ubah</button></td>';
+      tbody.appendChild(tr);
+    }
+    tbody.querySelectorAll('.toggle-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { promptToggle(btn.getAttribute('data-nisn')); });
+    });
+  }
+  document.getElementById('pageInfo').textContent = 'Halaman ' + adminPage + ' / ' + totalPages;
+  document.getElementById('prevPage').disabled = adminPage <= 1;
+  document.getElementById('nextPage').disabled = adminPage >= totalPages;
+}
+
+// ── MODAL ──
+let pendingToggle = null;
+function promptToggle(nisn) {
+  const rec = adminAll.find(function(x) { return x.nisn === nisn; });
+  if (!rec) return;
+  pendingToggle = rec;
+  const newStatus = rec.effective_status === 'Lulus' ? 'Ditangguhkan' : 'Lulus';
+  document.getElementById('mNama').textContent = rec.nama;
+  document.getElementById('mNisn').textContent = rec.nisn;
+  document.getElementById('mFrom').textContent = rec.effective_status;
+  document.getElementById('mTo').textContent = newStatus;
+  document.getElementById('confirmModal').classList.add('show');
+}
+function closeModal() {
+  pendingToggle = null;
+  document.getElementById('confirmModal').classList.remove('show');
+  document.getElementById('mConfirm').disabled = false;
+  document.getElementById('mConfirm').textContent = 'Ubah Status';
+}
+document.getElementById('mCancel').addEventListener('click', closeModal);
+document.getElementById('confirmModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+document.getElementById('mConfirm').addEventListener('click', async function() {
+  if (!pendingToggle || !adminCreds) return;
+  const newStatus = pendingToggle.effective_status === 'Lulus' ? 'Ditangguhkan' : 'Lulus';
+  const btn = document.getElementById('mConfirm');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading"></span>Menyimpan...';
+  try {
+    const res = await fetch('/api/admin/override', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nisn: adminCreds.nisn,
+        nama: adminCreds.nama,
+        target_nisn: pendingToggle.nisn,
+        new_status: newStatus
+      })
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(function(){ return { detail: 'Gagal.' }; });
+      alert('Gagal menyimpan: ' + (err.detail || res.status));
+      btn.disabled = false;
+      btn.textContent = 'Ubah Status';
+      return;
+    }
+    closeModal();
+    await loadAdminData();
+  } catch (e) {
+    alert('Tidak dapat terhubung ke server.');
+    btn.disabled = false;
+    btn.textContent = 'Ubah Status';
+  }
+});
+
+// ── RESET ──
+document.getElementById('resetBtn').addEventListener('click', async function() {
+  if (!adminCreds) return;
+  if (!confirm('Reset SEMUA perubahan status ke nilai asli dari spreadsheet? Tindakan ini menghapus seluruh override dari basis data dan tidak dapat dibatalkan.')) return;
+  try {
+    const res = await fetch('/api/admin/reset', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(adminCreds)
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(function(){ return { detail: 'Gagal.' }; });
+      alert('Gagal reset: ' + (err.detail || res.status));
+      return;
+    }
+    const body = await res.json();
+    alert('Berhasil menghapus ' + body.deleted + ' override.');
+    await loadAdminData();
+  } catch (e) {
+    alert('Tidak dapat terhubung ke server.');
+  }
+});
+
+// ── ADMIN CONTROLS ──
+let searchDebounce;
+document.getElementById('adminSearch').addEventListener('input', function() {
+  clearTimeout(searchDebounce);
+  searchDebounce = setTimeout(function() { adminPage = 1; recomputeFilter(); }, 150);
+});
+document.getElementById('adminFilterStatus').addEventListener('change', function() { adminPage = 1; recomputeFilter(); });
+document.getElementById('adminFilterJurusan').addEventListener('change', function() { adminPage = 1; recomputeFilter(); });
+document.getElementById('prevPage').addEventListener('click', function() { adminPage--; renderAdminPage(); window.scrollTo({top: 0, behavior:'smooth'}); });
+document.getElementById('nextPage').addEventListener('click', function() { adminPage++; renderAdminPage(); window.scrollTo({top: 0, behavior:'smooth'}); });
+</script>
+</body>
+</html>

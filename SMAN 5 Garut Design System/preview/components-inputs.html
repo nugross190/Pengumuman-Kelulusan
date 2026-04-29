@@ -1,0 +1,39 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#FDF8F0;padding:24px;display:flex;flex-direction:column;gap:20px}
+.section-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#9C8A78;margin-bottom:8px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#5C4E42;margin-bottom:6px}
+.field input{width:100%;background:#F6EFE0;border:1.5px solid transparent;border-radius:8px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:16px;color:#1C1410;outline:none}
+.field input.focus{border-color:#C41E1E;background:#fff;box-shadow:0 0 0 3px #FBE5E5}
+.field input.error{border-color:#C41E1E;background:#fff}
+.hint{font-size:13px;color:#9C8A78;font-style:italic;margin-top:6px}
+.err-msg{font-size:13px;color:#C41E1E;background:#FBE5E5;padding:8px 12px;border-radius:8px;margin-top:6px}
+</style></head><body>
+<div>
+  <div class="section-label">Default State</div>
+  <div class="field">
+    <label>Nomor Induk Siswa Nasional (NISN)</label>
+    <input type="text" placeholder="" value="">
+    <div class="hint">10 digit angka, sesuai data dapodik Anda.</div>
+  </div>
+</div>
+<div>
+  <div class="section-label">Focus State</div>
+  <div class="field">
+    <label>Nama Lengkap</label>
+    <input type="text" class="focus" value="AHMAD RIZKI FAUZAN">
+    <div class="hint">Sesuai ijazah / dokumen sekolah.</div>
+  </div>
+</div>
+<div>
+  <div class="section-label">Error State</div>
+  <div class="field">
+    <label>NISN</label>
+    <input type="text" class="error" value="123">
+    <div class="err-msg">NISN atau nama tidak ditemukan. Periksa kembali data Anda.</div>
+  </div>
+</div>
+</body></html>

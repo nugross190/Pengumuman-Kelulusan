@@ -1,0 +1,48 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,900;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#FDF8F0;padding:24px;display:flex;flex-direction:column;gap:20px}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.section-label{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#9C8A78;margin-bottom:8px}
+.badge{display:inline-block;padding:4px 10px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;border-radius:100px}
+.badge.lulus{background:#E2F0E5;color:#2D6A3D}
+.badge.hold{background:#F8E8D4;color:#8A4A14}
+.badge.modified{background:#C41E1E;color:white;font-size:10px;padding:3px 8px}
+.pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.28em;color:#C41E1E;text-transform:uppercase;background:#FBE5E5;padding:4px 14px;border-radius:100px;font-weight:500}
+
+.stamp-wrap{display:flex;gap:32px;align-items:center}
+.stamp{display:inline-block;padding:16px 40px;border:4px double currentColor;font-family:'Playfair Display',serif;font-size:28px;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;transform:rotate(-3deg);border-radius:6px;background:rgba(255,255,255,0.4);position:relative;white-space:nowrap}
+.stamp.lulus{color:#2D6A3D}
+.stamp.lulus::before{content:'★';position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(3deg);font-size:18px;background:#FDF8F0;padding:0 8px}
+.stamp.hold{color:#8A4A14;transform:rotate(-2deg)}
+.stamp.hold::before{content:'※';position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(2deg);font-size:18px;background:#FDF8F0;padding:0 8px}
+</style></head><body>
+
+<div>
+  <div class="section-label">Status Badges</div>
+  <div class="row">
+    <span class="badge lulus">Lulus</span>
+    <span class="badge hold">Ditangguhkan</span>
+    <span class="badge lulus">Lulus <span class="badge modified" style="border-radius:100px;vertical-align:middle">Diubah</span></span>
+  </div>
+</div>
+
+<div>
+  <div class="section-label">Pill Label</div>
+  <div class="row">
+    <span class="pill">Pengumuman Resmi</span>
+    <span class="pill">Surat Keterangan</span>
+    <span class="pill">Panel Administrator</span>
+  </div>
+</div>
+
+<div>
+  <div class="section-label">Stamps</div>
+  <div class="stamp-wrap">
+    <div class="stamp lulus">L U L U S</div>
+    <div class="stamp hold">Ditangguhkan</div>
+  </div>
+</div>
+
+</body></html>

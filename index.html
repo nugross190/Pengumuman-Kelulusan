@@ -1037,7 +1037,7 @@ function showResult(rec) {
   document.getElementById('rTtl').textContent = rec.ttl || '—';
   document.getElementById('rOrtu').textContent = rec.nama_ortu || '—';
   document.getElementById('rJurusan').textContent = rec.jurusan
-    ? (rec.jurusan === 'MIPA' ? 'MIPA (Matematika & Ilmu Pengetahuan Alam)' : 'IPS (Ilmu Pengetahuan Sosial)')
+    ? (rec.jurusan === 'MIPA' ? 'Matematika dan Ilmu Pengetahuan Alam' : 'Ilmu Pengetahuan Sosial')
     : '—';
 
   const status = rec.effective_status;

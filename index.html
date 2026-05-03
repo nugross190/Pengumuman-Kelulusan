@@ -9,27 +9,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ── Palette: HADIR foundation + ceremonial red/yellow accents ── */
+  /* ── Palette: Navy + Yellow + Steel Blue (Kartu Materi scheme) ── */
   :root {
-    --bg:           #FDF8F0;   /* HADIR warm cream, slightly warmer */
+    --navy-deep:    #1A1E3E;   /* Header, footer, dark accents */
+    --navy-mid:     #23344D;   /* Secondary header / sub-band */
+    --navy-dark:    #1C2740;   /* Footer bar, dark accents */
+    --yellow:       #FCE502;   /* Logo accent, highlight */
+    --yellow-bright:#FFE500;   /* Logo badge, emphasis */
+    --yellow-soft:  #FCE6B9;   /* Sub-heading tint bg */
+    --steel:        #7394CA;   /* Column header accent */
+    --steel-light:  #94BAE4;   /* Table header tint */
+    --warm-off:     #EEEBD9;   /* Section header bg */
+
+    --bg:           #F4F6FB;   /* Page background */
     --bg-card:      #FFFFFF;
-    --bg-soft:      #F6EFE0;
-    --bg-active:    #FEF3E7;
-    --text:         #1C1410;   /* HADIR ink */
-    --text-2:       #5C4E42;
-    --text-3:       #9C8A78;
-    --border:       #E8DDD0;
-    --border-strong:#C8B89C;
+    --bg-soft:      #EEEBD9;
+    --bg-active:    #E8EDF7;
+    --text:         #1A1E3E;   /* navy deep, used as primary text */
+    --text-2:       #3B4566;
+    --text-3:       #6B7A99;
+    --border:       #D7DCEA;
+    --border-strong:#94BAE4;
 
-    --accent:       #C41E1E;   /* SMAN 5 red */
-    --accent-dark:  #8B1515;
-    --accent-soft:  #FBE5E5;
-    --gold:         #D4A80F;
-    --gold-soft:    #FBF1C7;
-    --gold-deep:    #8A6A0A;
+    --accent:       #1A1E3E;   /* primary action = navy */
+    --accent-dark:  #11142C;
+    --accent-soft:  #E8EDF7;
+    --gold:         #FCE502;
+    --gold-soft:    #FCE6B9;
+    --gold-deep:    #8A7A0A;
 
-    --pass:         #2D6A3D;
-    --pass-soft:    #E2F0E5;
+    --pass:         #1A1E3E;   /* lulus uses navy for ceremonial weight */
+    --pass-soft:    #E8EDF7;
     --hold:         #8A4A14;
     --hold-soft:    #F8E8D4;
 
@@ -59,8 +69,8 @@
     position: fixed; inset: 0;
     pointer-events: none; z-index: 0;
     background-image:
-      radial-gradient(ellipse at top right, rgba(196,30,30,0.05), transparent 55%),
-      radial-gradient(ellipse at bottom left, rgba(212,168,15,0.06), transparent 55%);
+      radial-gradient(ellipse at top right, rgba(115,148,202,0.10), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(252,229,2,0.10), transparent 55%);
   }
   .wrap {
     max-width: 760px;
@@ -74,42 +84,51 @@
   /* ── LETTERHEAD ── */
   .kop {
     display: grid;
-    grid-template-columns: 72px 1fr 72px;
+    grid-template-columns: 80px 1fr 80px;
     gap: 16px;
     align-items: center;
-    padding-bottom: 16px;
-    margin-bottom: 28px;
-    border-bottom: 2px solid var(--text);
+    padding-bottom: 14px;
+    margin-bottom: 26px;
+    border-bottom: 3px double var(--navy-deep);
     position: relative;
   }
   .kop::after {
     content: '';
     position: absolute;
-    left: 0; right: 0; bottom: -6px;
-    height: 1px; background: var(--text);
+    left: 0; right: 0; bottom: -7px;
+    height: 1px; background: var(--navy-deep);
   }
   .kop img { width: 100%; height: auto; display: block; }
   .kop-text { text-align: center; }
   .kop-text .pem {
     font-family: var(--font);
-    font-size: 12px; font-weight: 500;
-    letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--text-2); margin: 0 0 2px;
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--navy-deep); margin: 0 0 2px; line-height: 1.25;
   }
   .kop-text .dinas {
-    font-family: var(--font); font-size: 15px; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--text); margin: 0 0 4px;
+    font-family: var(--font); font-size: 14px; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--navy-deep); margin: 0 0 1px; line-height: 1.25;
+  }
+  .kop-text .cabang {
+    font-family: var(--font); font-size: 13px; font-weight: 600;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    color: var(--navy-mid); margin: 0 0 2px; line-height: 1.25;
   }
   .kop-text .sman {
-    font-family: var(--font-display); font-size: 26px; font-weight: 900;
+    font-family: var(--font-display); font-size: 24px; font-weight: 900;
     letter-spacing: 0.02em; text-transform: uppercase;
-    color: var(--accent); margin: 0 0 4px; line-height: 1.05;
+    color: var(--navy-deep); margin: 4px 0 4px; line-height: 1.05;
   }
   .kop-text .alamat {
-    font-size: 12px; color: var(--text-2);
-    font-style: italic; margin: 0; line-height: 1.3;
+    font-size: 11.5px; color: var(--text-2);
+    margin: 0; line-height: 1.35;
   }
+  .kop-text .alamat a {
+    color: var(--steel); text-decoration: none;
+  }
+  .kop-text .alamat a:hover { text-decoration: underline; }
 
   /* ── TITLE BLOCK ── */
   .title-block { text-align: center; margin: 28px 0 32px; }
@@ -117,12 +136,12 @@
     display: inline-block;
     font-family: var(--font-mono);
     font-size: 10px; letter-spacing: 0.28em;
-    color: var(--accent); text-transform: uppercase;
+    color: var(--navy-deep); text-transform: uppercase;
     margin-bottom: 10px;
-    background: var(--accent-soft);
+    background: var(--yellow);
     padding: 4px 14px;
     border-radius: 100px;
-    font-weight: 500;
+    font-weight: 600;
   }
   .title-block h1 {
     font-family: var(--font-display);
@@ -130,14 +149,14 @@
     margin: 0 0 4px; letter-spacing: 0.01em; line-height: 1.1;
     color: var(--text);
   }
-  .title-block h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
+  .title-block h1 em { font-style: italic; font-weight: 500; color: var(--navy-mid); }
   .title-block .year {
     font-family: var(--font-display); font-style: italic;
     font-size: 18px; color: var(--text-2); margin-top: 6px;
   }
   .ornament {
     display: flex; align-items: center; justify-content: center;
-    gap: 12px; margin: 16px 0 0; color: var(--gold);
+    gap: 12px; margin: 16px 0 0; color: var(--steel);
   }
   .ornament .line { flex: 0 1 70px; height: 1px; background: currentColor; opacity: 0.6; }
   .ornament .dot { width: 6px; height: 6px; background: currentColor; transform: rotate(45deg); }
@@ -156,7 +175,7 @@
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 60%, var(--gold) 60%, var(--gold) 100%);
+    background: linear-gradient(90deg, var(--navy-deep) 0%, var(--navy-deep) 55%, var(--yellow) 55%, var(--yellow) 78%, var(--steel) 78%, var(--steel) 100%);
     border-radius: var(--radius) var(--radius) 0 0;
   }
   .intro { font-size: 16px; line-height: 1.6; margin: 0 0 22px; color: var(--text-2); }
@@ -181,7 +200,7 @@
     transition: all 0.18s ease;
   }
   .field input:focus {
-    border-color: var(--accent);
+    border-color: var(--steel);
     background: var(--bg-card);
     box-shadow: 0 0 0 3px var(--accent-soft);
   }
@@ -190,27 +209,27 @@
   .actions { display: flex; align-items: center; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
   button.primary {
     font-family: var(--font);
-    font-weight: 600; font-size: 14px;
+    font-weight: 700; font-size: 14px;
     letter-spacing: 0.04em;
-    background: var(--accent); color: white;
+    background: var(--navy-deep); color: var(--yellow);
     border: none; padding: 13px 26px;
     border-radius: var(--radius-sm);
     cursor: pointer;
     transition: all 0.18s ease;
-    box-shadow: 0 2px 6px -2px rgba(196,30,30,0.4);
+    box-shadow: 0 2px 6px -2px rgba(26,30,62,0.4);
   }
   button.primary:hover {
-    background: var(--accent-dark);
+    background: var(--navy-mid);
     transform: translateY(-1px);
-    box-shadow: 0 6px 14px -4px rgba(196,30,30,0.5);
+    box-shadow: 0 6px 14px -4px rgba(26,30,62,0.5);
   }
   button.primary:active { transform: translateY(0); }
   button.primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
 
   .err {
-    color: var(--accent); font-size: 14px;
+    color: #B12020; font-size: 14px;
     min-height: 22px;
-    background: var(--accent-soft);
+    background: #FBE5E5;
     padding: 8px 12px;
     border-radius: var(--radius-sm);
     display: none;
@@ -231,6 +250,30 @@
   .nomor { font-family: var(--font-mono); font-weight: 500; }
   .tanggal { font-style: italic; }
 
+  .nomor-surat {
+    margin: 8px 0 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-2);
+    letter-spacing: 0.02em;
+  }
+  .dasar-list {
+    margin: 8px 0 14px 0;
+    padding-left: 22px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-2);
+  }
+  .dasar-list li { margin-bottom: 4px; }
+  .dinyatakan-label {
+    font-family: var(--font);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-bottom: 10px;
+  }
+
   .salam {
     font-family: var(--font-display); font-style: italic;
     font-size: 18px; margin: 22px 0 14px; color: var(--text);
@@ -239,21 +282,22 @@
   .body-text strong { color: var(--text); font-weight: 600; }
 
   .siswa-info {
-    margin: 20px 0 26px;
-    background: var(--bg-soft);
+    margin: 18px 0 22px;
+    background: var(--warm-off);
     border-radius: var(--radius-sm);
     padding: 16px 20px;
-    border-left: 3px solid var(--accent);
+    border-left: 4px solid var(--yellow);
   }
   .siswa-info dl {
     display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: 6px 16px;
+    grid-template-columns: 220px 1fr;
+    gap: 6px 14px;
     margin: 0;
     font-size: 15px;
   }
-  .siswa-info dt { color: var(--text-3); font-style: italic; }
-  .siswa-info dd { margin: 0; color: var(--text); font-weight: 600; letter-spacing: 0.01em; }
+  .siswa-info dt { color: var(--text-2); }
+  .siswa-info dt::after { content: ' :'; color: var(--text-3); }
+  .siswa-info dd { margin: 0; color: var(--navy-deep); font-weight: 600; letter-spacing: 0.01em; }
 
   /* ── STAMP ── */
   .stamp-wrap { margin: 32px 0; text-align: center; position: relative; }
@@ -269,11 +313,12 @@
     background: rgba(255,255,255,0.4);
     border-radius: 6px;
   }
-  .stamp.lulus { color: var(--pass); }
+  .stamp.lulus { color: var(--navy-deep); background: rgba(252,229,2,0.15); }
   .stamp.lulus::before {
     content: '★'; position: absolute; top: -12px; left: 50%;
     transform: translateX(-50%) rotate(3deg);
     font-size: 22px; background: var(--bg); padding: 0 10px;
+    color: var(--yellow-bright); -webkit-text-stroke: 1px var(--navy-deep);
   }
   .stamp.hold { color: var(--hold); transform: rotate(-2deg); }
   .stamp.hold::before {
@@ -284,20 +329,20 @@
   .stamp-tagline { margin-top: 14px; font-style: italic; font-size: 15px; color: var(--text-2); }
 
   .rerata-statement {
-    margin: 24px 0 8px;
+    margin: 22px 0 8px;
     padding: 18px 22px;
-    background: linear-gradient(135deg, var(--gold-soft), var(--bg-card));
+    background: linear-gradient(135deg, var(--yellow-soft), var(--bg-card));
     border: 1px solid var(--border-strong);
     border-radius: var(--radius);
     text-align: center;
     font-size: 17px; line-height: 1.6;
     color: var(--text);
   }
-  .rerata-statement strong { color: var(--accent); font-weight: 700; }
+  .rerata-statement strong { color: var(--navy-deep); font-weight: 700; }
   .rerata-statement .nilai {
     font-family: var(--font-display);
-    font-weight: 900; font-size: 22px;
-    color: var(--accent-dark);
+    font-weight: 900; font-size: 24px;
+    color: var(--navy-deep);
     letter-spacing: 0.02em;
   }
 
@@ -361,7 +406,7 @@
   .admin-banner {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--yellow);
     border-radius: var(--radius-sm);
     padding: 14px 18px;
     margin-bottom: 22px;
@@ -373,7 +418,7 @@
   .admin-banner .icon {
     font-family: var(--font-display);
     font-size: 24px; line-height: 1;
-    color: var(--accent); flex-shrink: 0; font-weight: 900;
+    color: var(--navy-deep); flex-shrink: 0; font-weight: 900;
   }
   .admin-banner strong { color: var(--text); font-weight: 600; }
 
@@ -400,7 +445,7 @@
     transition: all 0.18s;
   }
   .admin-toolbar input[type="text"]:focus {
-    border-color: var(--accent);
+    border-color: var(--steel);
     background: white;
     box-shadow: 0 0 0 3px var(--accent-soft);
   }
@@ -414,7 +459,7 @@
     outline: none; cursor: pointer;
     transition: all 0.18s;
   }
-  .admin-toolbar select:focus { border-color: var(--accent); background: white; }
+  .admin-toolbar select:focus { border-color: var(--steel); background: white; }
   .admin-toolbar .count {
     font-family: var(--font-mono);
     font-size: 11px; letter-spacing: 0.1em;
@@ -458,9 +503,9 @@
     font-size: 28px; font-weight: 900;
     color: var(--text); line-height: 1.1; margin-top: 4px;
   }
-  .stat.pass .val { color: var(--pass); }
+  .stat.pass .val { color: var(--navy-deep); }
   .stat.hold .val { color: var(--hold); }
-  .stat.modified .val { color: var(--accent); }
+  .stat.modified .val { color: var(--steel); }
 
   .student-table-wrap {
     background: var(--bg-card);
@@ -476,8 +521,8 @@
     min-width: 760px;
   }
   .student-table thead th {
-    background: var(--text);
-    color: var(--bg);
+    background: var(--navy-deep);
+    color: var(--yellow);
     font-family: var(--font);
     font-size: 10px; font-weight: 600;
     letter-spacing: 0.1em; text-transform: uppercase;
@@ -490,8 +535,8 @@
     transition: background 0.12s;
   }
   .student-table tbody tr:hover { background: var(--bg-soft); }
-  .student-table tbody tr.modified { background: var(--gold-soft); }
-  .student-table tbody tr.modified:hover { background: #f8e8a0; }
+  .student-table tbody tr.modified { background: var(--yellow-soft); }
+  .student-table tbody tr.modified:hover { background: #f8d97a; }
   .student-table td { padding: 10px 14px; vertical-align: middle; }
   .student-table td.idx {
     font-family: var(--font-mono);
@@ -519,12 +564,12 @@
     letter-spacing: 0.04em;
     border-radius: 100px;
   }
-  .badge.lulus { background: var(--pass-soft); color: var(--pass); }
+  .badge.lulus { background: var(--accent-soft); color: var(--navy-deep); border: 1px solid var(--steel-light); }
   .badge.hold { background: var(--hold-soft); color: var(--hold); }
   .badge.modified-mark {
     margin-left: 6px;
-    background: var(--accent);
-    color: white;
+    background: var(--yellow);
+    color: var(--navy-deep);
     font-size: 10px;
     padding: 3px 8px;
     letter-spacing: 0.04em;
@@ -534,14 +579,14 @@
     font-size: 11px; font-weight: 600;
     letter-spacing: 0.04em;
     background: transparent;
-    color: var(--accent);
-    border: 1px solid var(--accent);
+    color: var(--navy-deep);
+    border: 1px solid var(--navy-deep);
     border-radius: var(--radius-sm);
     padding: 5px 12px;
     cursor: pointer;
     transition: all 0.18s;
   }
-  .toggle-btn:hover { background: var(--accent); color: white; }
+  .toggle-btn:hover { background: var(--navy-deep); color: var(--yellow); }
   .toggle-btn:disabled { opacity: 0.5; cursor: wait; }
   .empty-row td {
     text-align: center; padding: 40px;
@@ -605,8 +650,8 @@
     text-transform: uppercase;
   }
   .modal .change-arrow .from { color: var(--text-2); }
-  .modal .change-arrow .arrow { font-size: 20px; color: var(--accent); margin: 0 8px; }
-  .modal .change-arrow .to { color: var(--accent); }
+  .modal .change-arrow .arrow { font-size: 20px; color: var(--steel); margin: 0 8px; }
+  .modal .change-arrow .to { color: var(--navy-deep); font-weight: 700; }
   .modal-actions {
     display: flex; gap: 10px; justify-content: flex-end;
     margin-top: 22px;
@@ -623,16 +668,16 @@
   }
   .modal-actions .cancel:hover { background: var(--bg-soft); }
   .modal-actions .confirm {
-    background: var(--accent);
-    color: white;
+    background: var(--navy-deep);
+    color: var(--yellow);
     border: none;
     border-radius: var(--radius-sm);
-    font-size: 13px; font-weight: 600;
+    font-size: 13px; font-weight: 700;
     padding: 9px 20px;
     cursor: pointer;
     font-family: var(--font);
   }
-  .modal-actions .confirm:hover { background: var(--accent-dark); }
+  .modal-actions .confirm:hover { background: var(--navy-mid); }
   .modal-actions .confirm:disabled { opacity: 0.6; cursor: wait; }
 
   /* ── LOADING ── */
@@ -640,7 +685,7 @@
     display: inline-block;
     width: 14px; height: 14px;
     border: 2px solid var(--text-3);
-    border-top-color: var(--accent);
+    border-top-color: var(--navy-deep);
     border-radius: 50%;
     animation: spin 0.6s linear infinite;
     vertical-align: middle;
@@ -711,9 +756,11 @@
     <img src="/static/logo-jabar.png" alt="Logo Jawa Barat">
     <div class="kop-text">
       <p class="pem">Pemerintah Daerah Provinsi Jawa Barat</p>
-      <p class="dinas">Cabang Dinas Pendidikan Wilayah XI</p>
+      <p class="dinas">Dinas Pendidikan</p>
+      <p class="cabang">Cabang Dinas Pendidikan Wilayah XI</p>
       <p class="sman">SMA Negeri 5 Garut</p>
-      <p class="alamat">Jl. Cikopo, Pameungpeuk, Garut, Jawa Barat &middot; NPSN: 20227471</p>
+      <p class="alamat">Jl. Cikopo Telp. (0262) 521177 Pameungpeuk Kabupaten Garut</p>
+      <p class="alamat">Website: <a href="http://www.sman5garut.sch.id" target="_blank" rel="noopener">www.sman5garut.sch.id</a> &middot; email: <a href="mailto:info@sman5garut.sch.id">info@sman5garut.sch.id</a></p>
     </div>
     <img src="/static/logo-sman5.png" alt="Logo SMAN 5 Garut">
   </header>
@@ -751,40 +798,37 @@
 
   <!-- STUDENT RESULT -->
   <section class="result" id="resultView" aria-live="polite">
-    <div class="letter-head">
-      <span class="nomor" id="nomorSurat">Nomor: 421/____/SMAN.5/2026</span>
-      <span class="tanggal" id="tanggalSurat"></span>
-    </div>
-    <div class="title-block" style="margin: 8px 0 22px;">
+    <div class="title-block" style="margin: 8px 0 18px;">
       <span class="label">Surat Keterangan</span>
-      <h1 style="font-size: clamp(22px,4vw,30px);">Hasil <em>Kelulusan</em> Peserta Didik</h1>
+      <h1 style="font-size: clamp(22px,4vw,30px);">SURAT KETERANGAN <em>LULUS</em></h1>
+      <div class="nomor-surat" id="nomorSurat">Nomor : 254/TU.01.02/SMAN.05.GRT-CDPW.XI/2026</div>
       <div class="ornament"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
     </div>
-    <p class="salam">Dengan hormat,</p>
     <p class="body-text">
-      Berdasarkan hasil rapat pleno dewan guru SMA Negeri 5 Garut serta sesuai dengan ketentuan yang berlaku pada Tahun Pelajaran 2025/2026, dengan ini diberitahukan bahwa peserta didik dengan identitas sebagai berikut:
+      Kepala SMA Negeri 5 Garut Tahun Pelajaran 2025/2026, dengan berdasarkan :
     </p>
+    <ol class="dasar-list">
+      <li>Penyelesaian seluruh program pembelajaran pada kurikulum 2013 / kurikulum merdeka;</li>
+      <li>Kriteria kelulusan dari satuan pendidikan sesuai dengan peraturan perundang-undangan;</li>
+      <li>Rapat Pleno Dewan Guru tentang Penetapan Kelulusan pada tanggal 4 Mei 2026;</li>
+    </ol>
+    <p class="body-text" style="margin-top: 10px;">Menerangkan bahwa:</p>
     <div class="siswa-info">
       <dl>
         <dt>Nama</dt><dd id="rNama">—</dd>
-        <dt>NISN</dt><dd id="rNisn">—</dd>
-        <dt>NIS</dt><dd id="rNis">—</dd>
-        <dt>Program</dt><dd id="rJurusan">—</dd>
+        <dt>Tempat dan Tanggal Lahir</dt><dd id="rTtl">—</dd>
+        <dt>Nama Orang Tua</dt><dd id="rOrtu">—</dd>
+        <dt>Nomor Induk Siswa</dt><dd id="rNis">—</dd>
+        <dt>Nomor Induk Siswa Nasional</dt><dd id="rNisn">—</dd>
+        <dt>Peminatan / Mapel Pilihan</dt><dd id="rJurusan">—</dd>
       </dl>
     </div>
-    <p class="body-text">dinyatakan dengan status:</p>
     <div class="stamp-wrap">
+      <div class="dinyatakan-label">Dinyatakan</div>
       <div class="stamp" id="rStamp">—</div>
       <div class="stamp-tagline" id="rTagline"></div>
     </div>
     <div class="rerata-statement" id="rRerataStatement"></div>
-    <div class="grades-section">
-      <h3><span>Rincian Nilai Akhir</span> <span class="meta" id="rGradesMeta"></span></h3>
-      <table>
-        <thead><tr><th>Mata Pelajaran</th><th class="num">Nilai Akhir</th></tr></thead>
-        <tbody id="rGrades"></tbody>
-      </table>
-    </div>
     <div class="closing" id="rClosing"></div>
     <div class="signature">
       <div class="sig-block">
@@ -889,12 +933,6 @@
 // ── State ──
 const KKM = 75;
 const PAGE_SIZE = 25;
-const ORDER = [
-  'PAI','PKn','B. INDO','MATEMATIKA','SEJARAH INDONESIA','B.INGGRIS',
-  'SENI BUDAYA','PJOK','PRAKARYA','B.SUNDA',
-  'MATEMATIKA MINAT','BIOLOGI','FISIKA','KIMIA',
-  'SEJARAH MINAT','GEOGRAFI','SOSIOLOGI','EKONOMI'
-];
 const LABELS = {
   'PAI': 'Pendidikan Agama Islam & Budi Pekerti',
   'PKn': 'Pendidikan Pancasila & Kewarganegaraan',
@@ -913,7 +951,8 @@ const LABELS = {
   'SEJARAH MINAT': 'Sejarah (Peminatan)',
   'GEOGRAFI': 'Geografi',
   'SOSIOLOGI': 'Sosiologi',
-  'EKONOMI': 'Ekonomi'
+  'EKONOMI': 'Ekonomi',
+  'LINTAS MINAT': 'Lintas Minat (Bahasa & Sastra Jepang/Arab/Inggris)'
 };
 
 // Admin session — credentials kept in memory after login to authenticate API calls
@@ -991,11 +1030,12 @@ function showResult(rec) {
   view.classList.add('show');
 
   const today = new Date();
-  document.getElementById('tanggalSurat').textContent = formatLongDate(today);
   document.getElementById('rTanggalTtd').textContent = formatLongDate(today);
   document.getElementById('rNama').textContent = rec.nama;
   document.getElementById('rNisn').textContent = String(rec.nisn).padStart(10, '0');
   document.getElementById('rNis').textContent = rec.nis || '—';
+  document.getElementById('rTtl').textContent = rec.ttl || '—';
+  document.getElementById('rOrtu').textContent = rec.nama_ortu || '—';
   document.getElementById('rJurusan').textContent = rec.jurusan
     ? (rec.jurusan === 'MIPA' ? 'MIPA (Matematika & Ilmu Pengetahuan Alam)' : 'IPS (Ilmu Pengetahuan Sosial)')
     : '—';
@@ -1013,10 +1053,11 @@ function showResult(rec) {
     tagline.textContent = 'Selamat dan sukses atas kelulusan Anda.';
     rerataEl.style.display = 'block';
     rerataEl.innerHTML =
-      'Anda dinyatakan <strong>LULUS</strong> dengan rata-rata nilai akhir<br>' +
+      'dengan Rata-rata Nilai*<br>' +
       '<span class="nilai">' + avg + '</span>';
     closing.innerHTML =
-      '<p class="body-text">Demikian pengumuman ini kami sampaikan. Kepada yang bersangkutan, kami ucapkan <em>selamat</em> dan semoga keberhasilan ini menjadi bekal yang baik untuk melanjutkan ke jenjang pendidikan berikutnya. Pengambilan ijazah dan dokumen kelulusan akan diinformasikan lebih lanjut melalui wali kelas masing-masing.</p>';
+      '<p class="body-text">Demikian pengumuman ini kami sampaikan. Kepada yang bersangkutan, kami ucapkan <em>selamat</em> dan semoga keberhasilan ini menjadi bekal yang baik untuk melanjutkan ke jenjang pendidikan berikutnya. Pengambilan ijazah dan dokumen kelulusan akan diinformasikan lebih lanjut melalui wali kelas masing-masing.</p>' +
+      '<p class="body-text" style="font-size:12px;font-style:italic;color:var(--text-3);margin-top:6px;">*Rata-rata nilai mencakup seluruh mata pelajaran termasuk Lintas Minat.</p>';
   } else {
     stamp.textContent = 'Ditangguhkan';
     stamp.className = 'stamp hold';
@@ -1031,26 +1072,6 @@ function showResult(rec) {
       '<p class="body-text">Status kelulusan Anda saat ini ditangguhkan karena terdapat nilai akhir di bawah Kriteria Ketuntasan Minimal (KKM = ' + KKM + ').' + failedHtml +
       ' Mohon segera menghubungi <strong>wali kelas</strong> atau bagian <strong>Kurikulum</strong> SMA Negeri 5 Garut untuk informasi tindak lanjut.</p>';
   }
-
-  // Grades table
-  const tbody = document.getElementById('rGrades');
-  tbody.innerHTML = '';
-  let count = 0;
-  ORDER.forEach(function(key) {
-    if (rec.grades && rec.grades[key] !== undefined) {
-      const tr = document.createElement('tr');
-      const fail = rec.grades[key] < KKM;
-      tr.innerHTML = '<td class="subj">' + escapeHtml(LABELS[key] || key) + '</td>' +
-                     '<td class="score' + (fail ? ' fail' : '') + '">' + rec.grades[key].toFixed(2) + '</td>';
-      tbody.appendChild(tr);
-      count++;
-    }
-  });
-  document.getElementById('rGradesMeta').textContent = 'Rata-rata ' + avg + ' / ' + count + ' Mapel';
-
-  // Letter number
-  const seq = String(rec.nisn).padStart(10, '0').slice(-3);
-  document.getElementById('nomorSurat').textContent = 'Nomor: 421.3/' + seq + '/SMAN.5/2026';
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }

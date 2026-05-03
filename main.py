@@ -89,6 +89,8 @@ def _student_with_status(student: dict, override: Optional[dict]) -> dict:
         "failed_subjects": student["failed_subjects"],
         "is_overridden": override is not None,
         "override": override,
+        "ttl": student.get("ttl", ""),
+        "nama_ortu": student.get("nama_ortu", ""),
     }
 
 

@@ -1029,8 +1029,7 @@ function showResult(rec) {
   const view = document.getElementById('resultView');
   view.classList.add('show');
 
-  const today = new Date();
-  document.getElementById('rTanggalTtd').textContent = formatLongDate(today);
+  document.getElementById('rTanggalTtd').textContent = '4 Mei 2026';
   document.getElementById('rNama').textContent = rec.nama;
   document.getElementById('rNisn').textContent = String(rec.nisn).padStart(10, '0');
   document.getElementById('rNis').textContent = rec.nis || '—';

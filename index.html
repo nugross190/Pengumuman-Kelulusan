@@ -850,6 +850,74 @@
     from { opacity: 1; }
     to   { opacity: 0; pointer-events: none; }
   }
+  #coAdminLink {
+    margin-top: 36px; position: relative;
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(148,186,228,0.45);
+    cursor: pointer; border: none; background: transparent;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  #coAdminLink:hover { color: rgba(148,186,228,0.85); }
+  #coAdminPanel {
+    display: none;
+    position: relative;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 28px 30px;
+    width: min(360px, 90vw);
+    margin-top: 24px;
+    text-align: left;
+    backdrop-filter: blur(6px);
+    animation: fade-up 0.25s ease both;
+  }
+  #coAdminPanel.show { display: block; }
+  #coAdminPanel h2 {
+    font-family: var(--font-display);
+    font-weight: 700; font-size: 18px;
+    color: var(--yellow); margin: 0 0 18px;
+  }
+  #coAdminPanel .co-field { margin-bottom: 14px; }
+  #coAdminPanel .co-field label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(148,186,228,0.75); margin-bottom: 6px;
+  }
+  #coAdminPanel .co-field input {
+    width: 100%;
+    background: rgba(255,255,255,0.08);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-family: var(--font);
+    font-size: 15px; color: white; outline: none;
+    transition: border-color 0.18s, background 0.18s;
+  }
+  #coAdminPanel .co-field input::placeholder { color: rgba(255,255,255,0.3); }
+  #coAdminPanel .co-field input:focus {
+    border-color: var(--yellow);
+    background: rgba(255,255,255,0.12);
+  }
+  #coAdminPanel .co-err {
+    font-size: 13px; color: #f4a0a0;
+    min-height: 20px; margin-bottom: 10px;
+    display: none;
+  }
+  #coAdminPanel .co-err.show { display: block; }
+  #coAdminPanel button.co-submit {
+    width: 100%;
+    font-family: var(--font);
+    font-weight: 700; font-size: 14px; letter-spacing: 0.04em;
+    background: var(--yellow); color: var(--navy-deep);
+    border: none; border-radius: 8px;
+    padding: 12px; cursor: pointer;
+    transition: opacity 0.18s;
+  }
+  #coAdminPanel button.co-submit:hover { opacity: 0.88; }
+  #coAdminPanel button.co-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -1027,6 +1095,22 @@
     <div class="co-unit"><span class="num" id="cdSeconds">00</span><span class="lbl">Detik</span></div>
   </div>
   <p class="co-note">Halaman ini akan terbuka secara otomatis ketika waktu telah tiba. Harap tetap di halaman ini.</p>
+
+  <button type="button" id="coAdminLink" onclick="toggleCoAdminPanel()">Akses Administrator</button>
+
+  <div id="coAdminPanel">
+    <h2>Login Administrator</h2>
+    <div class="co-field">
+      <label for="coAdminNisn">NISN Admin</label>
+      <input type="text" id="coAdminNisn" placeholder="Masukkan NISN" autocomplete="off">
+    </div>
+    <div class="co-field">
+      <label for="coAdminNama">Nama</label>
+      <input type="text" id="coAdminNama" placeholder="Masukkan nama" autocomplete="off">
+    </div>
+    <div class="co-err" id="coAdminErr"></div>
+    <button type="button" class="co-submit" id="coAdminSubmit" onclick="submitCoAdmin()">Masuk sebagai Admin</button>
+  </div>
 </div>
 
 <!-- MODAL: confirm toggle -->
@@ -1064,14 +1148,16 @@
 
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
+  function dismissOverlay() {
+    overlay.classList.add('unlocked');
+    setTimeout(function() { overlay.style.display = 'none'; }, 700);
+  }
+  window._dismissCountdownOverlay = dismissOverlay;
+
   function tick() {
     var now = new Date();
     var diff = UNLOCK - now;
-    if (diff <= 0) {
-      overlay.classList.add('unlocked');
-      setTimeout(function() { overlay.style.display = 'none'; }, 700);
-      return;
-    }
+    if (diff <= 0) { dismissOverlay(); return; }
     var totalSec = Math.floor(diff / 1000);
     var h = Math.floor(totalSec / 3600);
     var m = Math.floor((totalSec % 3600) / 60);
@@ -1088,6 +1174,70 @@
     tick();
   }
 })();
+
+// ── COUNTDOWN ADMIN ACCESS ──
+function toggleCoAdminPanel() {
+  var panel = document.getElementById('coAdminPanel');
+  panel.classList.toggle('show');
+  if (panel.classList.contains('show')) {
+    document.getElementById('coAdminNisn').focus();
+  }
+}
+
+function submitCoAdmin() {
+  var nisn = document.getElementById('coAdminNisn').value.trim();
+  var nama = document.getElementById('coAdminNama').value.trim();
+  var errEl = document.getElementById('coAdminErr');
+  var btn = document.getElementById('coAdminSubmit');
+
+  errEl.textContent = '';
+  errEl.classList.remove('show');
+
+  if (!nisn || !nama) {
+    errEl.textContent = 'Mohon lengkapi NISN dan Nama.';
+    errEl.classList.add('show');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Memuat...';
+
+  fetch('/api/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nisn: nisn, nama: nama })
+  })
+  .then(function(res) {
+    return res.json().then(function(body) { return { ok: res.ok, body: body }; });
+  })
+  .then(function(r) {
+    if (!r.ok) {
+      errEl.textContent = r.body.detail || 'Kredensial tidak valid.';
+      errEl.classList.add('show');
+      return;
+    }
+    if (r.body.role !== 'admin') {
+      errEl.textContent = 'Akses hanya untuk administrator.';
+      errEl.classList.add('show');
+      return;
+    }
+    adminCreds = { nisn: nisn, nama: nama };
+    window._dismissCountdownOverlay();
+    showAdmin();
+  })
+  .catch(function() {
+    errEl.textContent = 'Tidak dapat terhubung ke server.';
+    errEl.classList.add('show');
+  })
+  .finally(function() {
+    btn.disabled = false;
+    btn.textContent = 'Masuk sebagai Admin';
+  });
+}
+
+document.getElementById('coAdminNama').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') submitCoAdmin();
+});
 
 // ── State ──
 const KKM = 75;

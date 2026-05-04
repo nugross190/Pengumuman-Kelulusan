@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengumuman Kelulusan SMAN 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .pamphlet {
+    width: 500px;
+    background: linear-gradient(160deg, #e8f4f8 0%, #d0eaf5 40%, #c2e0ef 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  /* ── HEADER BAND ── */
+  .header-band {
+    background: linear-gradient(135deg, #0a3d62 0%, #1a6fa8 60%, #0e5e90 100%);
+    padding: 18px 20px 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-band::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 120px; height: 120px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+  .header-band::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 40px;
+    width: 80px; height: 80px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  /* Logo row */
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .logo-circle {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  /* Transparent SMAN 5 logo placeholder – drawn in SVG */
+  .logo-circle svg { width: 42px; height: 42px; }
+
+  .school-name-block { flex: 1; }
+  .school-name-block .sekolah { font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: 1.5px; text-transform: uppercase; }
+  .school-name-block .nama { font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 800; color: #fff; line-height: 1.1; }
+
+  .gov-logos { display: flex; gap: 6px; align-items: center; }
+  .gov-dot { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.2); border: 1.5px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 700; color: #fff; }
+
+  .badge-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
+  .badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; padding: 3px 9px; font-size: 8px; font-weight: 600; color: #fff; letter-spacing: 0.5px; display: flex; align-items: center; gap: 4px; }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #f9ca24; }
+
+  /* ── TITLE SECTION ── */
+  .title-section {
+    background: linear-gradient(135deg, #0a3d62 0%, #1a6fa8 100%);
+    padding: 14px 20px 20px;
+    text-align: center;
+    position: relative;
+  }
+  .title-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 18px;
+    background: linear-gradient(160deg, #e8f4f8 0%, #d0eaf5 100%);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  .announce-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-bottom: 8px;
+  }
+  .announce-label span { font-size: 9px; font-weight: 700; color: #fff; letter-spacing: 1.5px; text-transform: uppercase; }
+  .megaphone { font-size: 14px; }
+
+  .title-main { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+  .title-big { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 38px; color: #f9ca24; letter-spacing: -1px; text-transform: uppercase; line-height: 1; text-shadow: 0 3px 12px rgba(0,0,0,0.3); margin-bottom: 8px; }
+
+  .kelas-pill {
+    display: inline-block;
+    background: linear-gradient(90deg, #f9ca24, #f0932b);
+    border-radius: 6px;
+    padding: 5px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: #0a3d62;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    box-shadow: 0 3px 10px rgba(249,202,36,0.4);
+  }
+
+  .tahun-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 3px 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+
+  /* Cap decoration */
+  .cap-deco {
+    position: absolute;
+    top: 10px; right: 16px;
+    font-size: 42px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    transform: rotate(12deg);
+  }
+  .star-deco { position: absolute; font-size: 16px; }
+  .s1 { top: 12px; left: 20px; color: #f9ca24; }
+  .s2 { top: 30px; left: 10px; color: rgba(255,255,255,0.5); font-size: 10px; }
+  .s3 { bottom: 30px; right: 10px; color: #f9ca24; font-size: 12px; }
+
+  .info-sub { font-size: 9px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+
+  /* ── BODY ── */
+  .body { padding: 18px 16px 10px; }
+
+  .step-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    box-shadow: 0 3px 12px rgba(10,61,98,0.10);
+    position: relative;
+    overflow: hidden;
+  }
+  .step-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, #1a6fa8, #0a3d62);
+    border-radius: 12px 0 0 12px;
+  }
+
+  .step-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0a3d62, #1a6fa8);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(10,61,98,0.35);
+  }
+
+  .step-content { flex: 1; }
+  .step-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    color: #0a3d62;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .step-title .icon { font-size: 14px; }
+
+  .step-body { font-size: 9.5px; color: #4a5568; line-height: 1.55; }
+  .step-body a, .step-body .link { color: #1a6fa8; font-weight: 600; text-decoration: none; }
+
+  /* time card */
+  .time-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .time-chip {
+    background: linear-gradient(135deg, #e8f4f8, #c2e0ef);
+    border: 1px solid #a8d5ea;
+    border-radius: 8px;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+  }
+  .time-chip .ti { font-size: 16px; }
+  .time-chip .tl { font-size: 8px; color: #0a3d62; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .time-chip .tv { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 12px; color: #0a3d62; }
+
+  /* illustration area */
+  .illus { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 36px; opacity: 0.15; }
+
+  /* positive activities */
+  .warn-card {
+    background: linear-gradient(135deg, #fff9e6, #fff3cc);
+    border: 1.5px solid #f9ca24;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  .warn-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, #f9ca24, #f0932b);
+    border-radius: 12px 0 0 12px;
+  }
+  .warn-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    color: #c0392b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .warn-title .num {
+    width: 22px; height: 22px;
+    background: linear-gradient(135deg, #f9ca24, #f0932b);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800; color: #0a3d62;
+    flex-shrink: 0;
+  }
+  .prohibit-row { display: flex; gap: 10px; margin: 8px 0; flex-wrap: wrap; }
+  .prohibit-item {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 3px; flex: 1; min-width: 60px;
+  }
+  .prohibit-circle {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #fde8e8;
+    border: 2px solid #e74c3c;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    position: relative;
+  }
+  .prohibit-circle::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: -2px; right: -2px;
+    height: 2px;
+    background: #e74c3c;
+    transform: rotate(-30deg);
+    border-radius: 2px;
+  }
+  .prohibit-label { font-size: 8px; color: #4a5568; text-align: center; font-weight: 600; line-height: 1.2; }
+
+  .donate-box {
+    background: linear-gradient(135deg, #e8f8f0, #c3efd8);
+    border: 1px solid #27ae60;
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .donate-box .di { font-size: 24px; }
+  .donate-box .dt { font-size: 8.5px; color: #1a5c38; line-height: 1.5; }
+  .donate-box .dt strong { font-family: 'Montserrat', sans-serif; font-size: 9px; color: #0a3d62; }
+
+  /* footer */
+  .footer {
+    background: linear-gradient(135deg, #0a3d62, #1a6fa8);
+    padding: 10px 16px;
+    text-align: center;
+  }
+  .footer-text { font-size: 8.5px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+  .footer-text strong { color: #f9ca24; font-family: 'Montserrat', sans-serif; }
+  .social-row { display: flex; gap: 8px; justify-content: center; margin-top: 6px; }
+  .social-chip { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 3px 10px; font-size: 8px; color: #fff; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+  /* Decorative floating shapes on body bg */
+  .body-bg {
+    position: relative;
+  }
+  .bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.07;
+    background: #0a3d62;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .step-card, .warn-card { position: relative; z-index: 1; }
+</style>
+</head>
+<body>
+<div class="pamphlet">
+
+  <!-- HEADER BAND -->
+  <div class="header-band">
+    <div class="logo-row">
+      <div class="logo-circle">
+        <!-- SMAN 5 Logo (transparent SVG placeholder) -->
+        <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Shield outline -->
+          <path d="M21 3 L36 9 L36 22 C36 30 28 37 21 40 C14 37 6 30 6 22 L6 9 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+          <!-- Star -->
+          <path d="M21 13 L22.5 18 L27.5 18 L23.5 21 L25 26 L21 23 L17 26 L18.5 21 L14.5 18 L19.5 18 Z" fill="#f9ca24" opacity="0.9"/>
+          <!-- SMAN 5 text -->
+          <text x="21" y="35" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="900" font-size="5" fill="rgba(255,255,255,0.85)">SMAN 5</text>
+        </svg>
+      </div>
+      <div class="school-name-block">
+        <div class="sekolah">SMA Negeri</div>
+        <div class="nama">5 · Kota Anda</div>
+      </div>
+      <div class="gov-logos">
+        <div class="gov-dot">🏛</div>
+        <div class="gov-dot">📚</div>
+        <div class="gov-dot">⭐</div>
+      </div>
+    </div>
+    <div class="badge-row">
+      <div class="badge"><span class="dot"></span> Disdik</div>
+      <div class="badge"><span class="dot"></span> Akreditasi A</div>
+      <div class="badge"><span class="dot"></span> Tiada Hari Tanpa Prestasi</div>
+    </div>
+  </div>
+
+  <!-- TITLE SECTION -->
+  <div class="title-section">
+    <div class="cap-deco">🎓</div>
+    <span class="star-deco s1">✦</span>
+    <span class="star-deco s2">✦</span>
+    <span class="star-deco s3">✦</span>
+
+    <div class="announce-label">
+      <span class="megaphone">📢</span>
+      <span>Pengumuman Resmi</span>
+    </div>
+    <div class="title-main">Pengumuman</div>
+    <div class="title-big">KELULUSAN</div>
+    <div class="kelas-pill">Murid Kelas XII</div><br>
+    <div class="tahun-pill">Tahun Pelajaran 2025/2026</div>
+    <div class="info-sub">Informasi terkait teknis pengumuman kelulusan sebagai berikut:</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body body-bg">
+    <div class="bg-shape" style="width:160px;height:160px;top:-40px;right:-50px;"></div>
+    <div class="bg-shape" style="width:100px;height:100px;bottom:60px;left:-30px;"></div>
+
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title"><span class="icon">💻</span> Mekanisme Pengumuman Online</div>
+        <div class="step-body">
+          Pengumuman kelulusan dilakukan secara <strong>daring (online)</strong> dengan mengakses:<br>
+          <span class="link">🔗 https://sman5.sch.id/skl</span><br>
+          kemudian masukkan <strong>NISN</strong> dan <strong>tanggal lahir</strong>.<br>
+          Murid dapat mengakses portal tersebut dari rumah masing-masing tanpa perlu mendatangi sekolah.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title"><span class="icon">🕐</span> Waktu Pelaksanaan</div>
+        <div class="step-body">Akses pengumuman kelulusan akan dibuka secara serentak pada:</div>
+        <div class="time-row">
+          <div class="time-chip">
+            <span class="ti">📅</span>
+            <div>
+              <div class="tl">Hari/Tanggal</div>
+              <div class="tv">Senin, 4 Mei 2026</div>
+            </div>
+          </div>
+          <div class="time-chip">
+            <span class="ti">⏰</span>
+            <div>
+              <div class="tl">Waktu</div>
+              <div class="tv">17.00 WIB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title"><span class="icon">👨‍👩‍👧</span> Peran Serta Orang Tua</div>
+        <div class="step-body">
+          Kami memohon bantuan <strong>Bapak/Ibu, orang tua/wali murid</strong> untuk melakukan pengawasan ketat terhadap putra-putrinya di luar rumah. Pastikan putra-putri tidak melakukan aktivitas di luar rumah yang berpotensi mengganggu. Tertibkan anak setelah menerima hasil kelulusan.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 – Warn -->
+    <div class="warn-card">
+      <div class="warn-title">
+        <span class="num">4</span>
+        Himbauan Kegiatan Positif
+      </div>
+      <div class="step-body" style="color:#4a5568; margin-bottom:8px;">
+        Seluruh murid dilarang keras merayakan kelulusan dengan cara yang berisiko dan berbahaya:
+      </div>
+      <div class="prohibit-row">
+        <div class="prohibit-item">
+          <div class="prohibit-circle">🎉</div>
+          <div class="prohibit-label">Konvoi<br>Kendaraan</div>
+        </div>
+        <div class="prohibit-item">
+          <div class="prohibit-circle">🍶</div>
+          <div class="prohibit-label">Miras dan<br>sejenisnya</div>
+        </div>
+        <div class="prohibit-item">
+          <div class="prohibit-circle">👥</div>
+          <div class="prohibit-label">Berkumpul<br>di area publik</div>
+        </div>
+      </div>
+      <div class="donate-box">
+        <span class="di">📦</span>
+        <div class="dt">
+          <strong>Sebagai gantinya, wujudkan kelulusan dengan hal positif!</strong><br>
+          Rayakan bersama keluarga di rumah, salurkan rasa syukur kepada yang membutuhkan melalui kegiatan <strong>donasi</strong> atau berbagi sebagai bentuk kepedulian sosial.
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:8.5px; color:#555; text-align:center; margin: 6px 0 10px; line-height:1.6;">
+      Demikian pengumuman ini disampaikan untuk menjadi perhatian<br>
+      bagi seluruh orang tua dan murid.<br>
+      <strong style="color:#0a3d62;">Atas kerja samanya, kami ucapkan terima kasih.</strong>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-text">
+      <strong>SMA Negeri 5</strong> · Kota Anda &nbsp;|&nbsp; @sman5official
+    </div>
+    <div class="social-row">
+      <div class="social-chip">📷 @sman5official</div>
+      <div class="social-chip">▶ SMAN5 Channel</div>
+      <div class="social-chip">🌐 sman5.sch.id</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

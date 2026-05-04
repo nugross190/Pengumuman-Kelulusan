@@ -191,6 +191,17 @@ def api_login(payload: LoginIn):
     except Exception:
         log.exception("Failed to read override for %s", student["nisn"])
 
+    effective = _effective_status(student, override)
+    if effective == "Ditangguhkan":
+        raise HTTPException(
+            status_code=403,
+            detail=(
+                "Status kelulusan Anda saat ini ditangguhkan. "
+                "Silakan hubungi wali kelas atau bagian Kurikulum SMA Negeri 5 Garut "
+                "untuk informasi lebih lanjut."
+            ),
+        )
+
     return {
         "role": "student",
         "data": _student_with_status(student, override),

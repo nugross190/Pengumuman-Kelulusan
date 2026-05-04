@@ -746,6 +746,110 @@
     .card::before { display: none; }
     .wrap { padding: 0; max-width: 100%; }
   }
+
+  /* ── COUNTDOWN LOCK OVERLAY ── */
+  #countdownOverlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--navy-deep);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 24px;
+    text-align: center;
+    overflow: hidden;
+  }
+  #countdownOverlay::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      radial-gradient(ellipse at top right, rgba(252,229,2,0.12), transparent 55%),
+      radial-gradient(ellipse at bottom left, rgba(115,148,202,0.12), transparent 55%);
+  }
+  #countdownOverlay .co-logos {
+    display: flex; align-items: center; gap: 24px;
+    margin-bottom: 32px; position: relative;
+  }
+  #countdownOverlay .co-logos img { height: 60px; width: auto; filter: brightness(1.1); }
+  #countdownOverlay .co-school {
+    font-family: var(--font-display);
+    font-weight: 900; font-size: clamp(14px,3vw,20px);
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--yellow); line-height: 1.2;
+    position: relative;
+  }
+  #countdownOverlay .co-tagline {
+    font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(148,186,228,0.9);
+    margin-bottom: 40px; position: relative;
+  }
+  #countdownOverlay .co-title {
+    font-family: var(--font-display);
+    font-weight: 900; font-size: clamp(24px,5vw,38px);
+    color: white; margin: 0 0 8px; position: relative;
+    letter-spacing: 0.01em;
+  }
+  #countdownOverlay .co-subtitle {
+    font-size: 15px; color: rgba(200,210,230,0.85);
+    margin: 0 0 44px; position: relative; line-height: 1.5;
+  }
+  #countdownOverlay .co-unlock-time {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--navy-deep);
+    font-family: var(--font-mono);
+    font-weight: 700; font-size: 16px;
+    letter-spacing: 0.1em;
+    padding: 5px 18px;
+    border-radius: 100px;
+    margin-bottom: 44px;
+    position: relative;
+  }
+  #countdownOverlay .co-clock {
+    display: flex; gap: clamp(10px,3vw,24px);
+    margin-bottom: 48px; position: relative;
+  }
+  #countdownOverlay .co-unit {
+    display: flex; flex-direction: column; align-items: center;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: clamp(14px,3vw,22px) clamp(16px,4vw,32px);
+    min-width: clamp(64px,14vw,96px);
+  }
+  #countdownOverlay .co-unit .num {
+    font-family: var(--font-display);
+    font-weight: 900; font-size: clamp(36px,8vw,64px);
+    color: var(--yellow); line-height: 1;
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  #countdownOverlay .co-unit .lbl {
+    font-family: var(--font-mono);
+    font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(148,186,228,0.85);
+    margin-top: 8px;
+  }
+  #countdownOverlay .co-sep {
+    font-family: var(--font-display);
+    font-weight: 900; font-size: clamp(32px,7vw,56px);
+    color: var(--steel); align-self: center;
+    padding-bottom: 20px; opacity: 0.7;
+    animation: blink-sep 1s step-start infinite;
+  }
+  @keyframes blink-sep { 0%,100%{opacity:0.7} 50%{opacity:0.2} }
+  #countdownOverlay .co-note {
+    font-size: 13px; color: rgba(180,195,220,0.7);
+    position: relative; max-width: 380px; line-height: 1.5;
+  }
+  #countdownOverlay.unlocked {
+    animation: co-fadeout 0.7s ease forwards;
+  }
+  @keyframes co-fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; pointer-events: none; }
+  }
 </style>
 </head>
 <body>
@@ -905,6 +1009,26 @@
 
 </div>
 
+<!-- COUNTDOWN LOCK OVERLAY -->
+<div id="countdownOverlay">
+  <div class="co-logos">
+    <img src="/static/logo-jabar.png" alt="Logo Jawa Barat">
+    <div class="co-school">SMA Negeri 5<br>Garut</div>
+    <img src="/static/logo-sman5.png" alt="Logo SMAN 5 Garut">
+  </div>
+  <div class="co-tagline">Pengumuman Kelulusan &mdash; Tahun Pelajaran 2025 / 2026</div>
+  <h1 class="co-title">Pengumuman Dibuka Pukul</h1>
+  <div class="co-unlock-time">16.00 WIB &mdash; 4 Mei 2026</div>
+  <div class="co-clock">
+    <div class="co-unit"><span class="num" id="cdHours">00</span><span class="lbl">Jam</span></div>
+    <div class="co-sep">:</div>
+    <div class="co-unit"><span class="num" id="cdMinutes">00</span><span class="lbl">Menit</span></div>
+    <div class="co-sep">:</div>
+    <div class="co-unit"><span class="num" id="cdSeconds">00</span><span class="lbl">Detik</span></div>
+  </div>
+  <p class="co-note">Halaman ini akan terbuka secara otomatis ketika waktu telah tiba. Harap tetap di halaman ini.</p>
+</div>
+
 <!-- MODAL: confirm toggle -->
 <div class="modal-backdrop" id="confirmModal">
   <div class="modal">
@@ -930,6 +1054,41 @@
 </div>
 
 <script>
+// ── COUNTDOWN LOCK ──
+(function() {
+  var UNLOCK = new Date(2026, 4, 4, 16, 0, 0); // May 4 2026 16:00:00 local time
+  var overlay = document.getElementById('countdownOverlay');
+  var elH = document.getElementById('cdHours');
+  var elM = document.getElementById('cdMinutes');
+  var elS = document.getElementById('cdSeconds');
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+  function tick() {
+    var now = new Date();
+    var diff = UNLOCK - now;
+    if (diff <= 0) {
+      overlay.classList.add('unlocked');
+      setTimeout(function() { overlay.style.display = 'none'; }, 700);
+      return;
+    }
+    var totalSec = Math.floor(diff / 1000);
+    var h = Math.floor(totalSec / 3600);
+    var m = Math.floor((totalSec % 3600) / 60);
+    var s = totalSec % 60;
+    elH.textContent = pad(h);
+    elM.textContent = pad(m);
+    elS.textContent = pad(s);
+    setTimeout(tick, 1000);
+  }
+
+  if (new Date() >= UNLOCK) {
+    overlay.style.display = 'none';
+  } else {
+    tick();
+  }
+})();
+
 // ── State ──
 const KKM = 75;
 const PAGE_SIZE = 25;
